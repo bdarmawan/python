@@ -34,4 +34,3 @@ root.insert(14)
 root.insert(3)
 
 root.printTree()
-print("Test5")
