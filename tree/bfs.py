@@ -63,13 +63,16 @@ class BinaryTree(object):
                 q.append(current.right)                # enqueue RIGHT
 
 
-t = BinaryTree(100)
-t.insert(90)
-t.insert(80)
+t = BinaryTree(100)     #                   100
+t.insert(90)            #                90      105
+t.insert(95)            #              80  95        120
+t.insert(105)           #            70           110    130
+t.insert(80)            #                                  140
 t.insert(70)
-t.insert(110)
 t.insert(120)
+t.insert(110)
 t.insert(130)
+t.insert(140)
 
 print("Output of Breadth First search is ", end="")
 t.BFS(t.root)
