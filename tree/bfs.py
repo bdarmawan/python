@@ -54,19 +54,13 @@ class BinaryTree(object):
         q = []
         if root:
             q.append(root)                             # enqueue ROOT
-            print(root.value, end=" ")
-        current = root
-        while current:
+        while q:
+            current = q.pop(0)                         # dequeuedd
+            print(current.value, end=" ")
             if current.left:
-                print(current.left.value, end=" ")
                 q.append(current.left)                 # enqueue LEFT
             if current.right:
-                print(current.right.value, end=" ")
                 q.append(current.right)                # enqueue RIGHT
-            q.pop(0)                                   # dequeue
-            if not q:
-                break
-            current = q[0]
 
 
 t = BinaryTree(100)
