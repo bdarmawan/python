@@ -51,7 +51,7 @@ class BinaryTree(object):
 
     def BFS(self,root):
         """In BFS the Node Values at each level of the Tree are traversed before going to next level"""
-        q = []
+        q = []             ## BFS using Queue
         if root:
             q.append(root)                             # enqueue ROOT
         while q:
