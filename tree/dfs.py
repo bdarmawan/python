@@ -1,3 +1,9 @@
+##
+## This is dfs (Depth First Search):
+##    * pre-Order  --- nlr
+##    * in-Order   --- lnr
+##    * post-Order --- lrn
+##
 class Node:
    def __init__(self,data):
        self.left = None
