@@ -1,3 +1,7 @@
+"""
+longest common prefix string amongst an array of strings:
+"""
+
 def longestCommonPrefix(strs):
     if len(strs) == 0:
         return ("")
