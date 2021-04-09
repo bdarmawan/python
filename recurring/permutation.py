@@ -35,6 +35,7 @@ first: c --- rest: b --- rest_permutation:  ['b']
 first: a --- rest: bc --- rest_permutation:  ['bc', 'cb']
     a : abc
     a : acb
+    
 first: b --- rest: ac
 first: a --- rest: c
 first: a --- rest: c --- rest_permutation:  ['c']
@@ -45,6 +46,7 @@ first: c --- rest: a --- rest_permutation:  ['a']
 first: b --- rest: ac --- rest_permutation:  ['ac', 'ca']
     b : bac
     b : bca
+
 first: c --- rest: ab
 first: a --- rest: b
 first: a --- rest: b --- rest_permutation:  ['b']
@@ -55,5 +57,7 @@ first: b --- rest: a --- rest_permutation:  ['a']
 first: c --- rest: ab --- rest_permutation:  ['ab', 'ba']
     c : cab
     c : cba
+
+
 ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 """
