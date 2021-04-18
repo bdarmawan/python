@@ -69,9 +69,10 @@ for i in (range(int(numOfLine))):
 
 for i in (range(len(line))):
    strs = line[i].split()
-   for i in (range(len(strs))):
-       print(strs[i], end=" ")
-   print(" ")
+   print(" ".join(strs))
+#   for i in (range(len(strs))):
+#       print(strs[i], end=" ")
+#   print(" ")
 
 
 """
