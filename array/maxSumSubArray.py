@@ -16,15 +16,15 @@ Using Kadane's method
 def maxSum_SubArray2(nums):
     maxSub = nums[0]
     curSum = 0
-    start, end, s = 0, 0, 0
+    start, end, ptr = 0, 0, 0
     for i in (range(len(nums))):
         curSum = curSum + nums[i]
         if maxSub < curSum:
             maxSub = curSum
-            start, end = s, i
+            start, end = ptr, i
         if curSum < 0:
             curSum = 0
-            s = i + 1
+            ptr = i + 1
     return maxSub, start, end
 
 
