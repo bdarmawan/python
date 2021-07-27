@@ -1,4 +1,4 @@
-def anagram(string) -> bool:
+def palindrome(string) -> bool:
 	if (type(string) != str):
 		return False
 	if (len(string) == 0):
@@ -18,22 +18,22 @@ def anagram(string) -> bool:
 
 
 string = "ABCBA"
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
 
 string = "ABBA"
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
 
 string = "ABCDBA"
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
 
 string = ""
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
 
 string = 1221
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
 
 string = "1221"
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
 
 string = "AB C BA"
-print(f"Is {string} anagram? {anagram(string)}")
+print(f"Is {string} palindrome? {palindrome(string)}")
