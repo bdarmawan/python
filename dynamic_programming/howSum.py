@@ -6,9 +6,10 @@ def howSum(target, numbers):
 
 	for number in numbers:
 		remainder = target - number
-		if howSum(remainder, numbers) != None:
-			res.append(number)
-			return res
+		combination = howSum(remainder, numbers)
+		if combination != None:
+			combination.append(number)
+			return combination
 
 	return None
 
@@ -24,21 +25,18 @@ def howSumMem(target, numbers, memo={}):
 
 	for number in numbers:
 		remainder = target - number
-		if howSumMem(remainder, numbers, memo) != None:
-			memo[target] = [number]
-			res.append(number)
-			return res
+		combination = howSum(remainder, numbers)
+		if combination != None:
+			memo[target] = number
+			combination.append(number)
+			return combination
 
 	return None
 
 
 
-res = []
 print(howSum(7, [2,3]))
-res = []
 print(howSum(8, [2,3,5 ]))
 
-res = []
 print(howSumMem(7, [2,3], {}))
-res = []
 print(howSumMem(8, [2,3,5], {}))
