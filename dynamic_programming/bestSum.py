@@ -30,9 +30,9 @@ def bestSumMem(target, numbers, memo={}):
     for number in numbers:
         remainder = target - number
         combination = bestSumMem(remainder, numbers, memo)
-        if combination is not None:
+        if combination != None:
             combination.append(number)
-            if shortestAnswer is None or len(combination) < len(shortestAnswer):
+            if shortestAnswer == None or len(combination) < len(shortestAnswer):
                 shortestAnswer = combination
 
     memo[target] = shortestAnswer
