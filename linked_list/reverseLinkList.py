@@ -23,6 +23,19 @@ class Solution:
             print(head.val, end='->')
             head = head.next
 
+
+    def reversedRecursively(self, head):
+        if head is None:
+            return head
+        if head.next is None:
+            return head
+        newHead = self.reversedRecursively(head.next)
+        head.next.next = head
+        head.next = None
+
+        return newHead
+
+
 if __name__ == '__main__':
     root = Node(1)
     root.next = Node(2)
@@ -38,6 +51,22 @@ if __name__ == '__main__':
     print()
     newRoot = s.reverseList(root)
     s.printList(newRoot)
+    '''
+    5->4->3->2->1->
+    '''
+
+    """
+    With Recursive
+    """
+    print()
+    root = Node(1)
+    root.next = Node(2)
+    root.next.next = Node(3)
+    root.next.next.next = Node(4)
+    root.next.next.next.next = Node(5)
+
+    newRoot2 = s.reversedRecursively(root)
+    s.printList(newRoot2)
     '''
     5->4->3->2->1->
     '''
