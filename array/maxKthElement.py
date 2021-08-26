@@ -19,6 +19,13 @@ def findKthMaxElement(myList, kth):
     return kthMax * -1
 
 
+def findKthMaxElement2(myList, kth):
+    # Another way is by sorting the list first
+    # then pick the element from the right
+
+    myList.sort()
+    return myList[-2]
+
 
 
 myList = [15, 7, 9, 4, 13]
@@ -32,3 +39,4 @@ return -13 * -1 = 13
 
 Output: 13
 '''
+print(findKthMaxElement2(myList, 2))
