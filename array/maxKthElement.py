@@ -42,7 +42,13 @@ print(findKthMaxElement(myList, 2))
 Orig myList = [15, 7, 9, 4, 13]
 Updated myList = [-15, -7, -9, -4, -13]
 heapify = [-15, -13, -9, -4, -7]
-kth = 2 -> heappop 2 times -> get -13
+              -15
+            /     \
+        -13       -9
+       /   \
+    -4      -7
+
+kth = 2 -> heapq.heappop() 2 times -> get -13
 return -13 * -1 = 13
 
 Output: 13
