@@ -1,6 +1,14 @@
 import heapq
-
 '''
+O (n log n)
+
+Parent node representation
+    array[(i -1) / 2] 
+Left child node representation
+    array[(2 * i) + 1]
+Right child node representation
+    array[(2 * i) + 1]
+
 In Python, by default the heap is MinHeap there is no MaxHeap
 So, to find kthMaxElement, we need to:
     * modify all element to -negative value
