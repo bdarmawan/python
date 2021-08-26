@@ -1,0 +1,34 @@
+import heapq
+
+'''
+In Python, by default the heap is MinHeap there is no MaxHeap
+So, to find kthMaxElement, we need to:
+    * modify all element to -negative value
+    * so that when creating heap using heapify
+    * we reverse it, the max value becomes the min val
+    * when we heappop it, we multiply it with -1 to get the actual value
+'''
+
+def findKthMaxElement(myList, kth):
+    myList = [i * -1 for i in myList]
+    heapq.heapify(myList)
+    print(myList)
+    for i in range(kth):
+        kthMax = heapq.heappop(myList)
+
+    return kthMax * -1
+
+
+
+
+myList = [15, 7, 9, 4, 13]
+print(findKthMaxElement(myList, 2))
+'''
+Orig myList = [15, 7, 9, 4, 13]
+Updated myList = [-15, -7, -9, -4, -13]
+heapify = [-15, -13, -9, -4, -7]
+kth = 2 -> heappop 2 times -> get -13
+return -13 * -1 = 13
+
+Output: 13
+'''
