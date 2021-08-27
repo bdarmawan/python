@@ -48,3 +48,6 @@ List: [-2, 1, -3, 4, -1, 2, 1, 5, 4]
    4     17     13    =>   17
 MaxSum: 17
 """
+
+# Think to consider
+# To get max Sum of SubSequence, can we just take all the postive numbers?
