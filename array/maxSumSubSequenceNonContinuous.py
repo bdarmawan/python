@@ -15,6 +15,7 @@ print(f"List: {a}")
 print(f"MaxSum: {maxSubSequence(a)}")
 
 """
+           *      *      *  *      *
 List: [-2, 1, -3, 4, -1, 2, 1, -5, 4]
    i   curSum  maxRun    maxSum
   -2     -2      0    =>    0
@@ -33,6 +34,7 @@ b = [-2, 1, -3, 4, -1, 2, 1, 5, 4]
 print(f"List: {b}")
 print(f"MaxSum: {maxSubSequence(b)}")
 """
+           *      *      *  *  *  *
 List: [-2, 1, -3, 4, -1, 2, 1, 5, 4]
    i   curSum  maxRun    maxSum
   -2     -2      0    =>    0
