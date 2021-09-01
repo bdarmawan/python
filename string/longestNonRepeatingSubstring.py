@@ -8,6 +8,7 @@ def isUnique(string):
     return True
 
 def findLongestSubstringBruteForce(string):
+    # Brute Force
     # Complexity: O(N^3)
     maxLength = 0
     res = {}
@@ -27,6 +28,7 @@ def findLongestSubstringBruteForce(string):
 
 
 def findLongestSubstring(string):
+    # 2nd choice
     # Complexity: O(N)
     dict = {}
     start = curlen = longest = 0
@@ -44,7 +46,9 @@ def findLongestSubstring(string):
 
 
 def findLongestSubString2(string):
+    # 1st choice
     # Complexity: O(N)
+
     i = j = longest = 0
     mySet = set()
 
