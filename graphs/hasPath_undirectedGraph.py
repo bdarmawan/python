@@ -4,10 +4,9 @@ def undirectedPath(edges, nodeA, nodeB):
 
 
 def hasPath(graph, src, dst, visited):
-    if (src == dst):
-        return True
+    if (src == dst): return True
     if src in visited:
-        return False
+        return False     #if it has been visited, no need to process again
     visited.add(src)
 
     for neighbor in graph[src]:
