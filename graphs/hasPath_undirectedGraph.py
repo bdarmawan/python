@@ -22,8 +22,8 @@ def buildGraph(edges):
 
    for edge in edges:
        (a, b) = edge
-       if (not(a in graph)): graph[a] = []
-       if (not(b in graph)): graph[b] = []
+       if (a not in graph): graph[a] = []
+       if (b not in graph): graph[b] = []
        graph[a].append(b)    #
        graph[b].append(a)    # This is because of UNDIRECTED GRAPH
 
