@@ -62,7 +62,7 @@ def howSumTab(targetSum, numbers):
 			for num in numbers:
 				if i + num <= targetSum:
 					table[i + num] = table[i] + [num]  # Tricky !!!
-
+                                       # we're NOT adding 'num' but appending it!!!
 	return table[targetSum]
 
 
