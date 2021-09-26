@@ -63,6 +63,7 @@ def bestSumTab(targetSum, numbers):
             for num in numbers:
                 if i + num <= targetSum:
                     combination = table[i] + [num]    # Tricky !!!
+                    # we're NOT adding 'num' but appending it!!!
                     if table[i + num] is None  or  (len(table[i + num]) > len(combination)):   # Tricky !!!
                         table[i + num] = combination
 
