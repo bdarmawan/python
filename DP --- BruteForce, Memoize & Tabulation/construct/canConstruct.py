@@ -78,11 +78,11 @@ print("")
 #####
 # 2 #
 #####
-print(canConstruct('abcdef', ['ab','abc','cd','def','abcd']))
-print(canConstruct('skateboard', ['bp','rd','ate','t','ska','sk','boar']))
-print(canConstruct('enterapotentpot', ['a','p','ent','enter','ot','o','t']))
+print(canConstruct('abcdef', ['ab','abc','cd','def','abcd']))					# True
+print(canConstruct('skateboard', ['bp','rd','ate','t','ska','sk','boar']))		# False
+print(canConstruct('enterapotentpot', ['a','p','ent','enter','ot','o','t']))	# True
 # Below is still a bit slow
-print(canConstruct('eeeeeeeeeeeeeeeeeeeeeeeeef', [
+print(canConstruct('eeeeeeeeeeeeeeeeeeeeeeeeef', [								# False
 	'e',
 	'ee',
 	'eee',
@@ -95,10 +95,10 @@ print("")
 #####
 # 3 #
 #####
-print(canConstructTab('abcdef', ['ab','abc','cd','def','abcd']))
-print(canConstructTab('skateboard', ['bp','rd','ate','t','ska','sk','boar']))
-print(canConstructTab('enterapotentpot', ['a','p','ent','enter','ot','o','t']))
-print(canConstructTab('eeeeeeeeeeeeeeeeeeeeeeeeef', [
+print(canConstructTab('abcdef', ['ab','abc','cd','def','abcd']))				# True
+print(canConstructTab('skateboard', ['bp','rd','ate','t','ska','sk','boar']))	# False
+print(canConstructTab('enterapotentpot', ['a','p','ent','enter','ot','o','t']))	# True
+print(canConstructTab('eeeeeeeeeeeeeeeeeeeeeeeeef', [							# False
 	'e',
 	'ee',
 	'eee',
