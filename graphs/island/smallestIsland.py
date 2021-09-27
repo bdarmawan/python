@@ -1,3 +1,9 @@
+'''
+Time:  O(rc)
+Space: O(rc)
+'''
+
+
 import math
 
 def minIsland(grid):
@@ -45,4 +51,4 @@ grid = [
     ['W', 'W', 'L', 'W', 'W'],
 ]
 
-print(minIsland(grid))
+print(minIsland(grid))       # OUTPUT:  2
