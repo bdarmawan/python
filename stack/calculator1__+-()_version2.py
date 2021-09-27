@@ -1,3 +1,6 @@
+"""
+OPERATOR:  + - ( )
+"""
 def calculate(str):
     if str is None:
         return 0
@@ -11,10 +14,15 @@ def calculate(str):
         if currentChar.isdigit():
             currentNumber = currentNumber * 10 + int(currentChar)
 
-        if (not currentChar.isdigit() and (not currentChar.isspace()) or (i == len(str)-1)):
-        # it is important for the --- or (i == len(str) -1)
-        # because we want the following lines to be executed at the end of str
-        # even the last char is not an operator nor space
+        ''' The following will do
+         (
+         not currentChar.isdigit() -> not a digit, e.g.:  + - * /
+         not currentChar.isspace() -> not a space
+         )
+         OR
+         it is last char of the input  ---  i == len(str) -2
+        '''
+        if (not currentChar.isdigit() and (not currentChar.isspace())   or   (i == len(str)-1)):
             if operation == "+":
                 stack.append(currentNumber)
             if operation == "-":
@@ -36,6 +44,10 @@ def calculate(str):
 
 
 str = "2+(3-2+5)"
-#str = "2+3-1"
-#str  = "2+ (3-0+ (1+1) +4)"
-print(calculate(str))
+print(calculate(str))   # OUTPUT: 8
+
+str = "2+3-1"
+print(calculate(str))   # OUTPUT: 4
+
+str  = "2+ (3-0+ (1+1) +4)"
+print(calculate(str))   # OUTPUT: 11
