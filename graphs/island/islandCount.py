@@ -40,4 +40,4 @@ grid = [
     ['L', 'L', 'W', 'W', 'W'],
 ]
 
-print(islandCount(grid))
+print(islandCount(grid))      # OUTPUT: 3
