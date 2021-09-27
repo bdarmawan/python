@@ -45,6 +45,15 @@ print(f"Is there a path from j to l? {undirectedPath(edges, 'j', 'l')}")
 print(f"Is there a path from i to o? {undirectedPath(edges, 'i', 'o')}")
 
 """
+GRAPH:
+i:['j', 'k']
+j:['i']
+k:['i', 'm', 'l']
+m:['k']
+l:['k'] 
+o:['n']
+n:['o']
+
 OUTPUT:
 Is there a path from j to m? True
 Is there a path from m to j? True
