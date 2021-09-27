@@ -21,26 +21,18 @@ def romanToInt(str):
 
 roman = "DXLII"
 res = romanToInt(roman)
-print(f"\n{roman} = {res}")
+print(f"\n{roman} = {res}")     # 542
 
 roman = "XXXVI"
 res = romanToInt(roman)
-print(f"\n{roman} = {res}")
+print(f"\n{roman} = {res}")     # 36
 
 roman = "MXXIII"
 res = romanToInt(roman)
-print(f"\n{roman} = {res}")
-
-"""
-OUTPUT
-DXLII = 542
-
-XXXVI = 36
-
-MXXIII = 1023
-"""
+print(f"\n{roman} = {res}")     # 1023
 
 
+#=======================================
 
 def romanToInt2(str):
     dict = { "I": 1,
@@ -61,18 +53,25 @@ def romanToInt2(str):
               }
 
     for k, v in convert.items():
-        str = str.replace(k, v)
+        str = str.replace(k, v)         # tricky !!!
 
+    print(f"Converted String: {str}")
     return sum([dict[numeral] for numeral in str])
 
 roman = "DXLII"
 res = romanToInt2(roman)
-print(f"\n{roman} = {res}")
+print(f"\n{roman} = {res}")     # Converted String: DXXXXII
+                                # sum([500, 10, 10, 10, 10, 1, 1])
+                                # DXLII = 542
 
 roman = "XXXVI"
 res = romanToInt2(roman)
-print(f"\n{roman} = {res}")
+print(f"\n{roman} = {res}")     # Converted String: XXXVI
+                                # sum([10, 10, 10, 5, 1])
+                                # XXXVI = 36
 
 roman = "MXXIII"
 res = romanToInt2(roman)
-print(f"\n{roman} = {res}")
+print(f"\n{roman} = {res}")     # Converted String: MXXIII
+                                # sum([1000, 10, 10, 1, 1, 1])
+                                # MXXIII = 1023
