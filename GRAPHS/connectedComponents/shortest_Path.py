@@ -22,6 +22,15 @@ edges = [
     ['w', 'v']
 ]
 
+edges2 = [
+    ['w', 'x'],
+    ['x', 'y'],
+    ['z', 'y'],
+    ['z', 'v'],
+    ['w', 'v'],
+    ['a', 'b']
+]
+
 def convertToAdjMatrix(edges):
     graph = {}
 
@@ -61,3 +70,4 @@ print(shortestPath(edges, 'z', 'w'))  # OUTPUT: 2
 print(shortestPath(edges, 'w', 'w'))  # OUTPUT: 0
 print(shortestPath(edges, 'w', 'y'))  # OUTPUT: 2
 print(shortestPath(edges, 'y', 'w'))  # OUTPUT: 2
+print(shortestPath(edges, 'y', 'a'))  # OUTPUT: -1
