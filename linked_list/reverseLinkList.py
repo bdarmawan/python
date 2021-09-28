@@ -7,7 +7,7 @@ class Solution:
 #  https://www.bing.com/videos/search?q=reverse+link+list+python&docid=607990507016750550&mid=0FFEC9B3D05313A672FD0FFEC9B3D05313A672FD&view=detail&FORM=VIRE
 #
 # iterative
-    def reverseList(self, head):
+    def reverseList(self, head):           ### OPTION 1
         prev = None
         while head:
             temp = head
@@ -16,15 +16,8 @@ class Solution:
             prev = temp
         return prev
 
-    def printList(self, head):
-        if head == None:
-            return None
-        while (head):
-            print(head.val, end='->')
-            head = head.next
 
-
-    def reversedRecursively(self, head):
+    def reversedRecursively(self, head):   ### OPTION 2
         if head is None:
             return head
         if head.next is None:
@@ -32,8 +25,16 @@ class Solution:
         newHead = self.reversedRecursively(head.next)
         head.next.next = head
         head.next = None
-
         return newHead
+
+
+    def printList(self, head):
+        if head == None:
+            return None
+        while (head):
+            print(head.val, end='->')
+            head = head.next
+
 
 
 if __name__ == '__main__':
