@@ -1,3 +1,9 @@
+'''
+For GRAPH problem, if there's a cyclic especially on the
+undirected graph, you need to keep track on VISITED node
+'''
+
+
 graph = {
     '1': ['0'],
     '0': ['8', '1', '5'],

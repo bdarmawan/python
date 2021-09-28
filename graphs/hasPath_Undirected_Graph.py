@@ -1,3 +1,8 @@
+'''
+For GRAPH problem, if there's a cyclic especially on the
+undirected graph, you need to keep track on VISITED node
+'''
+
 def undirectedPath(edges, nodeA, nodeB):
     graph = buildGraph(edges)
     return hasPath(graph, nodeA, nodeB, set())
