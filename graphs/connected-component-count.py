@@ -48,5 +48,9 @@ def explore(graph, current, visited):
         explore(graph, neighbor, visited)
     return True
 
+
+
+###
+# TEST
 print(graph)
 print(connectedComponentCount(graph))     # OUTPUT: 2
