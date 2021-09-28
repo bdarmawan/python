@@ -11,7 +11,7 @@ undirected graph, you need to keep track on VISITED node
 ### 1 ###
 #   depthFirstPrint
 #   --- Depth First Search
-#   --- ---  using STACK
+#   --- ---  using STACK, thus LIFO
 ###
 def depthFirstPrint(graph, source):
     stack = [ source ]    # initialize the stack with "source" node
@@ -27,7 +27,7 @@ def depthFirstPrint(graph, source):
 ### 2 ###
 #   breathFirstPrint
 #   --- Breath First Search
-#   --- ---  using QUEUE
+#   --- ---  using QUEUE, thus FIFO
 ###
 def breadthFirstPrint(graph, source):
     queue = [ source ]
@@ -36,7 +36,7 @@ def breadthFirstPrint(graph, source):
         current = queue.pop()
         print(current, end=" ")
         for neighbor in graph[current]:
-            queue.append(neighbor)
+            queue.insert(0, neighbor)
     print("")
 
 
@@ -64,7 +64,7 @@ depthFirstPrint(graph, 'e')     # e
 
 print("")
 
-breadthFirstPrint(graph, 'a')     # a c e b d f
+breadthFirstPrint(graph, 'a')     # a b c d e f
 breadthFirstPrint(graph, 'c')     # c e
 breadthFirstPrint(graph, 'e')     # e
 breadthFirstPrint(graph, 'b')     # b d f
