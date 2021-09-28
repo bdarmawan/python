@@ -52,5 +52,4 @@ def explore(graph, current, visited):
 
 ###
 # TEST
-print(graph)
 print(connectedComponentCount(graph))     # OUTPUT: 2
