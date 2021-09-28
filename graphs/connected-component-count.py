@@ -1,6 +1,6 @@
 graph = {
-    '0': ['8', '1', '5'],
     '1': ['0'],
+    '0': ['8', '1', '5'],
     '5': ['0', '8'],
     '8': ['0', '5'],
     '2': ['3', '4'],
@@ -11,8 +11,8 @@ graph = {
 '''
 or:
 graph = {
-    0: [8, 1, 5],
     1: [0],
+    0: [8, 1, 5],
     5: [0, 8],
     8: [0, 5],
     2: [3, 4],
@@ -24,7 +24,7 @@ graph = {
          |  \    
      1 - 0 - 8
 
-        3 - 2 - 4
+        3 - 2 
          \  | 
             4
 
@@ -41,8 +41,8 @@ def connectedComponentCount(graph):
 
 
 def explore(graph, current, visited):
-    if str(current) in visited: return False
-    visited.add(str(current))
+    if current in visited: return False
+    visited.add(current)
 
     for neighbor in graph[current]:
         explore(graph, neighbor, visited)
