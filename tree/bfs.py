@@ -76,3 +76,5 @@ t.insert(140)
 
 print("Output of Breadth First search is ", end="")
 t.BFS(t.root)
+
+# Output of Breadth First search is 100 90 105 80 95 120 70 110 130 140

@@ -45,6 +45,8 @@ print(findMissingNumber(myArray))
 Output:
 2
 ***************************************************
+Original:
+[3, 4, 7, 1]
 Swap: nums[0] with nums[2]
 [7, 4, 3, 1]
 Swap: nums[1] with nums[3]
