@@ -53,14 +53,14 @@ class BinaryTree(object):
         """In BFS the Node Values at each level of the Tree are traversed before going to next level"""
         q = []             ## BFS using Queue
         if root:
-            q.append(root)                             # enqueue ROOT
+            q.insert(0, root)                             # enqueue in front ROOT
         while q:
-            current = q.pop(0)                         # dequeuedd
+            current = q.pop()                         # dequeued from the tail
             print(current.value, end=" ")
             if current.left:
-                q.append(current.left)                 # enqueue LEFT
+                q.insert(0, current.left)                 # enqueue in front LEFT
             if current.right:
-                q.append(current.right)                # enqueue RIGHT
+                q.insert(0, current.right)                # enqueue in front RIGHT
 
 
 t = BinaryTree(100)     #                   100
