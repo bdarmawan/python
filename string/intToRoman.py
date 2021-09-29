@@ -54,7 +54,8 @@ def intToRoman(number):
         # print("fours: ", fours)
         # print("ones: ", ones)
 
-        rdict = {v: k for k, v in dict.items()}
+        # invert the dictionary from k:v ----> v:k
+        rdict = {v: k for k, v in dict.items()}    ### Tricky !!!
         print(rdict[1000]*thousands + rdict[900]*ninehundreds + rdict[500]*fivehundreds + rdict[400]*fourhundreds
               + rdict[100]*hundreds + rdict[90]*nineties + rdict[50]*fifties + rdict[40]*forties
               + rdict[10]*tens + rdict[9]*nines + rdict[5]*fives + rdict[4]*fours + rdict[1]*ones

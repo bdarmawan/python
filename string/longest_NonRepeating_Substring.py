@@ -9,7 +9,7 @@ def isUnique(string):
 
 # Brute Force
 # Complexity: O(N^3)
-def findLongestSubstringBruteForce(string):
+def findLongestSubstring_BRUTE_FORCE(string):
     maxLength = 0
     res = {}
     for i in range(len(string)):
@@ -29,7 +29,7 @@ def findLongestSubstringBruteForce(string):
 
 # 2nd choice
 # Complexity: O(N)
-def findLongestSubstring(string):
+def findLongestSubstring_2ND_CHOICE(string):
     dict = {}
     start = curlen = longest = 0
 
@@ -47,7 +47,7 @@ def findLongestSubstring(string):
 
 # 1st choice
 # Complexity: O(N)
-def findLongestSubString2(string):
+def findLongestSubString_1ST_CHOICE(string):
     i = j = longest = 0
     mySet = set()
 
@@ -66,16 +66,18 @@ def findLongestSubString2(string):
 # Driver Code
 if __name__ == "__main__":
     string = "GEEKSFORGEEKS"
-    res = findLongestSubstringBruteForce(string)
+    res = findLongestSubstring_BRUTE_FORCE(string)
     print(res)
     longest = max(res.values())
     for k, v in res.items():
         if v == longest:
-            print(f"{k} ----> length: {len(k)}")
+            print(f"{k} ----> length: {len(k)}")   # EKSFORG ----> length: 7
+                                                   # KSFORGE ----> length: 7
 
     print("********************************************************")
-    print(findLongestSubstring(string))
-    print(findLongestSubString2(string))
+    print(findLongestSubstring_2ND_CHOICE(string))      # OUTPUT: 7
+    print("********************************************************")
+    print(findLongestSubString_1ST_CHOICE(string))     # OUTPUT: 7
 
 """
 Output: 
@@ -162,5 +164,6 @@ EKSFORG ----> length: 7
 KSFORGE ----> length: 7
 ********************************************************
 7
+********************************************************
 7
 """

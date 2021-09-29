@@ -1,5 +1,6 @@
 """
 longest common prefix string amongst an array of strings:
+                            ["Horse","Horreay","Horsey"]
 """
 
 def longestCommonPrefix(strs):
