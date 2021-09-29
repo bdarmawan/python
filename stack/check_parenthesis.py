@@ -10,7 +10,8 @@ def isValid(s):
     for i in s:
         if i in open_par:
             stack.append(i)
-        elif stack  and  (i == bracket_map[stack[-1]]):
+        # if stack is not empty and there's a matching brackets
+        elif len(stack) > 0  and  (i == bracket_map[stack[-1]]):
                 stack.pop()
         else:
             return False
