@@ -20,7 +20,7 @@ def calculate(str):
          not currentChar.isspace() -> not a space
          )
          OR
-         it is last char of the input  ---  i == len(str) -2
+         it is last char of the input  ---  i == len(str) - 1   ---->   IMPORTANT
         '''
         if (not currentChar.isdigit() and (not currentChar.isspace())   or   (i == len(str)-1)):
             if operation == "+":
