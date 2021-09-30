@@ -31,6 +31,14 @@ if __name__ == "__main__":
     arr = [0,1,0,2,1,0,1,3,2,1,2,1]
     rainTrap(arr)   # OUTPUT: 6
 
+    arr = []
+    rainTrap(arr)   # OUTPUT: 0
+
+    arr = [1,1,1,1,1]
+    rainTrap(arr)   # OUTPUT: 0
+
+    arr = [1,-1,-2]
+    rainTrap(arr)   # OUTPUT: 0
 '''
 1 0 3 4 3
 2 2 3 4 1
