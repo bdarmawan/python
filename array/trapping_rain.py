@@ -14,7 +14,7 @@ def rainTrap(arr):
     for i in range(1, len(arr)):     # arr[0] is always 0
         maxLeft  = max(arr[:i])      # since it won't be able to collect water
         maxRight = max(arr[i:])
-        waterToCollect = min(maxLeft, maxRight) - arr[i]   # remmeber need - arr[i]
+        waterToCollect = min(maxLeft, maxRight) - arr[i]   # remember need - arr[i]
         if waterToCollect < 0:  waterToCollect = 0
         print(i, arr[i], maxLeft, maxRight, waterToCollect)
         numWater += waterToCollect
