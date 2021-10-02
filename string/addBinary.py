@@ -47,8 +47,8 @@ def addBinary(a: str, b:str) -> str:
     return result[::-1]   # we need to reverse, b/c we did pop() operation earlier
 
 
-
-
+###
+### TEST
 a = "11101"
 b = "11011"
 print(addBinary(a, b))   # OUTPUT: 111000
