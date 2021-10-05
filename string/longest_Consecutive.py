@@ -23,5 +23,5 @@ print(f"Longest consecutive: {s.longestConsecutive(b)}")
 
 """
 List: [100, 4, 200, 1, 3, 2]
-Longest consecutive: 4
+Longest consecutive: 4  ---> which is 1,2,3,4
 """
