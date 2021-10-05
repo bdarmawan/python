@@ -45,16 +45,15 @@ root.left.left.right = Node(9)
 
 
 print("In-Order: ", end="")
-inOrder(root)
-#8 4 9 2 5 1 6 3 7
+inOrder(root)       #OUTPUT: 8 4 9 2 5 1 6 3 7
 print("")
+
 print("Pre-Order: ", end="")
-preOrder(root)
-#1 2 4 8 9 5 3 6 7
+preOrder(root)      #OUTPUT: 1 2 4 8 9 5 3 6 7
 print("")
+
 print("Post-Order: ", end="")
-postOrder(root)
-#8 9 4 5 2 6 7 3 1
+postOrder(root)     #OUTPUT: 8 9 4 5 2 6 7 3 1
 print("")
 
 #================================
