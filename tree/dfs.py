@@ -14,19 +14,19 @@ class Node:
        self.right = None
        self.data = data
 
-def inOrder(root):
+def inOrder(root):          # LNR - Node in the middle
    if root:
        inOrder(root.left)
        print(root.data, end=" ")
        inOrder(root.right)
 
-def preOrder(root):
+def preOrder(root):         # NLR - Node at front
    if root:
        print(root.data, end=" ")
        preOrder(root.left)
        preOrder(root.right)
 
-def postOrder(root):
+def postOrder(root):        # LRN - Node at end
    if root:
        postOrder(root.left)
        postOrder(root.right)
@@ -56,3 +56,38 @@ print("Post-Order: ", end="")
 postOrder(root)
 #8 9 4 5 2 6 7 3 1
 print("")
+
+#================================
+from typing import List
+from typing import Optional
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result = []
+        if root:
+            result.append(root.val)
+            result += (self.preorderTraversal(root.left))
+            result += (self.preorderTraversal(root.right))
+        return result
+
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result = []
+        if root:
+            result += self.postorderTraversal(root.left)
+            result += self.postorderTraversal(root.right)
+            result.append(root.val)
+        return result
+
+
+s = Solution()
+root = TreeNode(1)
+root.right = TreeNode(2)
+root.right.left = TreeNode(3)
+print(s.preorderTraversal(root))     # OUTPUT: [1,2,3]
+print(s.postorderTraversal(root))    # OUTPUT: [3,2,1]
