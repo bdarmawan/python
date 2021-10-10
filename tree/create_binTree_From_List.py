@@ -17,8 +17,8 @@ def createBinTree(myList: List[int]):
 
 
 def insert(root, value):
-    if value == root.data:
-        return ""
+    if value == root.data:      # to handle repeating value
+        return ""               # so, it will just ignore it
     if value < root.data:
         if root.left is None:
             node = Node(value)
