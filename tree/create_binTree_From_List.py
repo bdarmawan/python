@@ -16,6 +16,8 @@ def createBinTree(myList: List[int]):
 
 
 def insert(root, value):
+    if value == root.data:
+        return ""
     if value < root.data:
         if root.left is None:
             node = Node(value)
@@ -62,6 +64,17 @@ createBinTree(myList)       #OUTPUT: 3 6 9 12 14
 
 print("")
 myList = [6, 14, 9, 3, 12]
+createBinTree(myList)       #OUTPUT: 3 6 9 12 14
+'''
+            12
+          /     \
+        6         14
+      /   \
+    3      9
+'''
+
+print("")
+myList = [6, 14, 9, 3, 6, 12]
 createBinTree(myList)       #OUTPUT: 3 6 9 12 14
 '''
             12
