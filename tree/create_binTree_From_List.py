@@ -9,10 +9,11 @@ class Node:
 
 
 def createBinTree(myList: List[int]):
-    root = Node(myList[0])
-    for i in range(1, len(myList)):
-        insert(root, myList[i])
-    printTree(root)
+    if len(myList) > 0:     # To handle empty list case
+        root = Node(myList[0])
+        for i in range(1, len(myList)):
+            insert(root, myList[i])
+        printTree(root)
 
 
 def insert(root, value):
@@ -83,3 +84,6 @@ createBinTree(myList)       #OUTPUT: 3 6 9 12 14
       /   \
     3      9
 '''
+print("")
+myList = []
+createBinTree(myList)       #OUTPUT: 3 6 9 12 14
