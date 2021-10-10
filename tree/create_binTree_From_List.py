@@ -63,3 +63,10 @@ createBinTree(myList)       #OUTPUT: 3 6 9 12 14
 print("")
 myList = [6, 14, 9, 3, 12]
 createBinTree(myList)       #OUTPUT: 3 6 9 12 14
+'''
+            12
+          /     \
+        6         14
+      /   \
+    3      9
+'''
