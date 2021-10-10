@@ -9,7 +9,7 @@ def maxSum_SubArray(nums):
         if curSum < 0:
             curSum = 0
         curSum += n
-        maxSub = max(maxSub, curSum)
+        maxSub = max(maxSub, curSum)   #This the key!
     return maxSub
 
 
