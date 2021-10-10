@@ -1,51 +1,92 @@
 """
-If we care about what they are
+There are several ways to do it
+"""
+from typing import List
+
+"""
+Way 1:  BRUTEFORCE:  O(n^2)
+
+nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
+i        0  1  2  3  4   5  6   7  8
+j           0  1  2  3   4  5   6  7 ==> find max() *--*
+j              0  1  2   3  4   5  6 ==> find max()    |
+j                 0  1   2  3   4  5 ==> find max()    |
+j                    0   1  2   3  4 ==> find max()    |
+j                        0  1   2  3 ==> find max()    *---- max from all
+j                           0   1  2 ==> find max()    |     of these
+j                               0  1 ==> find max()    |
+j                                  0 ==> find max() *--*
+"""
+def bruteForce(nums: List[int]) -> int:
+    tot = 0
+    for i in range(len(nums)):
+        subtot = 0
+        for j in range(i + 1, len(nums)):
+            subtot += nums[j]
+            tot = max(tot, subtot)
+    return tot
+
+
+print("")
+print("*** BRUTE FORCE ***")
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+print(bruteForce(nums))     #OUTPUT: 6
+nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
+print(bruteForce(nums))     #OUTPUT: 10
+print("")
+
+
+
+"""
+Way 2:  BETTER, but if we still don't care about what the subarray is
+        O(n)
 """
 def maxSum_SubArray(nums):
-    maxSub = nums[0]
-    curSum = 0
+    tot = nums[0]
+    subtot = 0
 
     for n in nums:
-        if curSum < 0:
-            curSum = 0
-        curSum += n
-        maxSub = max(maxSub, curSum)   #This the key!
-    return maxSub
+        if subtot < 0:
+            subtot = 0
+        subtot += n
+        tot = max(tot, subtot)   #This the key!
+    return tot
 
 
-"""
-Using Kadane's method
-If we care about what they are
-"""
-def maxSum_SubArray2(nums):
-    maxSub = nums[0]
-    curSum = 0
-    start, end, ptr = 0, 0, 0
-    for i in (range(len(nums))):
-        curSum = curSum + nums[i]
-        if maxSub < curSum:
-            maxSub = curSum
-            start, end = ptr, i
-        if curSum < 0:
-            curSum = 0
-            ptr = i + 1
-    return maxSub, start, end
-
-
-
+print("")
+print("*** BETTER WAY ***")
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-print(maxSum_SubArray(nums))     # 6
+print(maxSum_SubArray(nums))     #OUTPUT: 6
 nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
-print(maxSum_SubArray(nums))     # 10
+print(maxSum_SubArray(nums))     #OUTPUT: 10
+print("")
+
+
 
 """
-Output:
-6
-10
+Way 3: Using Kadane's method - If we care about what they are
+    O(n)
 """
-#        0  1  2  3  4   5  6   7  8
+def kadane(nums):
+    tot, subtot = 0, 0
+    start, end = 0, 0
+
+    for i in (range(len(nums))):
+        subtot = subtot + nums[i]
+        if tot < subtot:
+            tot = subtot
+            end = i
+        if subtot < 0:
+            subtot = 0
+            start = i + 1    # start will begin in the next one (i+1)
+    return tot, start, end
+
+
+print("")
+print("*** KADANE WAY ***")
+# i      0  1  2  3  4   5  6   7  8
 nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
-maxSum, start, end = maxSum_SubArray2(nums)
+maxSum, start, end = kadane(nums)
 print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
 print("[", end="")
 for j in range(start, end+1):
@@ -64,7 +105,18 @@ ptr          0       1
 Output:
 MaxSum = 10 ::: start pos = 1 ::: end pos = 6
 [1,3,4,-1,2,1,]
------
+"""
+
+print("\n")
+# i      0  1  2  3  4   5  6   7  8
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+maxSum, start, end = kadane(nums)
+print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
+print("[", end="")
+for j in range(start, end+1):
+    print(nums[j], end=",")
+print("]", end="")
+""" 
              i       0     1   2     3   4  5   6    7    8
                    [-2,    1, -3,    4, -1, 2,  1,  -5,   4]
                    -----------------------------------------
