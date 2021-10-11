@@ -5,14 +5,14 @@ class PermutationClass:
 
         result = []
         for i in range(len(input)):
-            first = input[i]
-            rest = input[:i] + input[i + 1:]
-            #print(f"first: {first} --- rest: {rest}")
+            pivot = input[i]
+            rest = input[:i] + input[i+1:]
+            #print(f"pivot: {pivot} --- rest: {rest}")
             rest_permutation = self.permutation(rest)
-            #print(f"first: {first} --- rest: {rest} --- rest_permutation:  {str(rest_permutation)}")
+            #print(f"pivot: {pivot} --- rest: {rest} --- rest_permutation:  {str(rest_permutation)}")
             for p in rest_permutation:
-                result.append(first + p)
-                #print(f"    {first} : {first + p}")
+                result.append(pivot + p)
+                #print(f"    {pivot} : {pivot + p}")
         return result
 
 if __name__ == '__main__':
