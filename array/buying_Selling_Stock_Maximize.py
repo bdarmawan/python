@@ -30,3 +30,7 @@ print(stockmax(prices))     #OUTPUT : 197
 prices =[1, 3, 1, 2]
 print(stockmax(prices))     #OUTPUT : 3
                             # (-1 + 3) + (-1 + 2)
+
+prices = [10, 22, 5, 75, 65, 80]
+print(stockmax(prices))     #OUTPUT : 3
+                            # (-1 + 3) + (-1 + 2)
