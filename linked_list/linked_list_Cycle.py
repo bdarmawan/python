@@ -11,15 +11,14 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
-        slow = fast = head
-        ctr = 0
+        slow, fast = head, head.next.next
 
-        while (fast.next.next != None) and slow.next:
-            if (ctr != 0) and (slow.val == fast.val):
+        while (fast.next.next) and (slow.next):
+            if slow.val == fast.val:
                 return True
-            ctr = 1
-            slow = slow.next
-            fast = fast.next.next
+            else:
+                slow = slow.next
+                fast = fast.next.next
 
         return False
 
@@ -32,6 +31,13 @@ ll.next.next = ListNode(0)
 ll.next.next.next = ListNode(-4)
 ll.next.next.next.next = saved
 
+
+ll2 = ListNode(3)
+ll2.next = saved = ListNode(2)
+ll2.next.next = ListNode(0)
+ll2.next.next.next = ListNode(-4)
+
 s = Solution()
 print(s.hasCycle(ll))       # OUTPUT: True
+print(s.hasCycle(ll2))      # OUTPUT: False
 
