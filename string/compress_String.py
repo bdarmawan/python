@@ -41,13 +41,16 @@ def compressWorkOne(chars: List[str]) -> int:
             index += 1
             count += 1
         chars[indexRes] = cur
+
         indexRes += 1
         index += 1
+
         if (count == 1):
             continue
         for c in str(count):
             chars[indexRes] = c
             indexRes += 1
+
     print(chars)
     return indexRes
 
