@@ -40,16 +40,17 @@ def compressWorkOne(chars: List[str]) -> int:
         while (index+1 < len(chars)  and  chars[index+1] == cur):
             index += 1
             count += 1
-        chars[indexRes] = cur
+        chars[indexRes] = cur               #Ths is for storing the character
 
         indexRes += 1
         index += 1
 
         if (count == 1):
             continue
+
         for c in str(count):
             chars[indexRes] = c
-            indexRes += 1
+            indexRes += 1                   #Ths is for storing the count
 
     print(chars)
     return indexRes
