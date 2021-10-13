@@ -33,17 +33,17 @@ def compress(chars: List[str]) -> int:
 
 
 def compressWorkOne(chars: List[str]) -> int:
-    indexRes, index = 0, 0
-    while index < len(chars):
-        cur = chars[index]
+    indexRes, i = 0, 0
+    while i < len(chars):
+        cur = chars[i]
         count = 1
-        while (index+1 < len(chars)  and  chars[index+1] == cur):
-            index += 1
+        while (i+1 < len(chars)  and  chars[i+1] == cur):
+            i += 1
             count += 1
         chars[indexRes] = cur               #Ths is for storing the character
 
         indexRes += 1
-        index += 1
+        i += 1
 
         if (count == 1):
             continue
