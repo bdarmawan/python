@@ -3,7 +3,7 @@ from typing import List
 def findPivot_in_RotatedArray(nums: List) -> int:
     n = len(nums)
     left = 0
-    right = n    # we don't use n - 1 here b/c we don't access nums[right]
+    right = n - 1
     while left <= right:
         mid = (right + left) // 2
         if nums[mid] > nums[mid + 1]:    # check if mid el is > the next one
