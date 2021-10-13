@@ -56,8 +56,8 @@ if __name__ == '__main__':
     frog = Frog()
     array = [1,1,2,5,2,1,0,0,1,3]
     print("Can the frog reach the destination: ", end='')
-    print(frog.canJump(array))
+    print(frog.canJump(array))          #OUTPUT: True
 
     array = [1, 1, 2, 5, 2, 1, 0, 0, 0, 3]
     print("Can the frog reach the destination: ", end='')
-    print(frog.canJump(array))
+    print(frog.canJump(array))          #OUTPUT: False
