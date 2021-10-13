@@ -24,12 +24,12 @@ def search_element_in_rotated_array(nums: List, target: int) -> int:
         if target == nums[mid]:
             return mid
         elif nums[left] <= nums[mid]:                          # [5, 6, 7, 8, 0
-            if target >= nums[left] and target <= nums[mid]:   #  l          mid
+            if nums[left] <= target <= nums[mid]:              #  l          mid
                 right = mid - 1                                #  <-- target -->
             else:
                 left = mid + 1
         else:                                                  # 0, 1, 2, 3, 4]
-            if target >= nums[mid] and target <= nums[right]:  # mid         r
+            if nums[mid] <= target <= nums[right]:             # mid         r
                 left = mid + 1                                 # <-- target -->
             else:
                 right = mid - 1
