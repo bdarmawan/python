@@ -11,7 +11,7 @@ def maxProdSubarray(nums):
         if i > 1:
             ans = max(ans, currMaxProduct)
         else:
-            anx = max(currMaxProduct, currMinProduct)
+            ans = max(currMaxProduct, currMinProduct)   # only the first time in loop
         prevMaxProduct = currMaxProduct
         prevMinProduct = currMinProduct
     return ans
