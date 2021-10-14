@@ -7,8 +7,8 @@ from typing import List
 Way 1:  BRUTEFORCE:  O(n^2)
 
 nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
-i        0  1  2  3  4   5  6   7  8
-j           0  1  2  3   4  5   6  7 ==> find max() *--*
+i        0  1  2  3  4   5  6   7  8 ==> find max() *--*
+j           0  1  2  3   4  5   6  7 ==> find max()    |
 j              0  1  2   3  4   5  6 ==> find max()    |
 j                 0  1   2  3   4  5 ==> find max()    |
 j                    0   1  2   3  4 ==> find max()    |
@@ -20,7 +20,7 @@ j                                  0 ==> find max() *--*
 def bruteForce(nums: List[int]) -> int:
     tot = 0
     for i in range(len(nums)):
-        subtot = 0
+        subtot = nums[i]
         for j in range(i + 1, len(nums)):
             subtot += nums[j]
             tot = max(tot, subtot)
@@ -33,6 +33,8 @@ nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 print(bruteForce(nums))     #OUTPUT: 6
 nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
 print(bruteForce(nums))     #OUTPUT: 10
+nums = [2, 1, 3, 4, -1, 2, 1, -5, 4]
+print(bruteForce(nums))     #OUTPUT: 12
 print("")
 
 
@@ -59,6 +61,8 @@ nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 print(maxSum_SubArray(nums))     #OUTPUT: 6
 nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
 print(maxSum_SubArray(nums))     #OUTPUT: 10
+nums = [2, 1, 3, 4, -1, 2, 1, -5, 4]
+print(maxSum_SubArray(nums))          # OUTPUT: 12
 print("")
 
 
@@ -128,3 +132,13 @@ Output:
 MaxSum = 6 ::: start pos = 3 ::: end pos = 6
 [4,-1,2,1,]
 """
+
+print("\n")
+# i      0  1  2  3  4   5  6   7  8
+nums =  [2, 1, 3, 4, -1, 2, 1, -5, 4]
+maxSum, start, end = kadane(nums)
+print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
+print("[", end="")
+for j in range(start, end+1):
+    print(nums[j], end=",")
+print("]", end="")
