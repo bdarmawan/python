@@ -89,29 +89,6 @@ def kadane(nums):
 print("")
 print("*** KADANE WAY ***")
 # i      0  1  2  3  4   5  6   7  8
-nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
-maxSum, start, end = kadane(nums)
-print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
-print("[", end="")
-for j in range(start, end+1):
-    print(nums[j], end=",")
-print("]", end="")
-"""
-             i       0     1  2  3   4  5   6    7    8
-                   [-2,    1, 3, 4, -1, 2,  1,  -5,   4]
-                   -------------------------------------
-subtot       0      -2->0  1  4  8   7  9  10    5    9   
-tot         -2             1  4  8   8  9  10   10  [10]
-start        0             1  1  1      1  [1]  
-end          0             1  2  2      5  [6]
-
-Output:
-MaxSum = 10 ::: start pos = 1 ::: end pos = 6
-[1,3,4,-1,2,1,]
-"""
-
-print("\n")
-# i      0  1  2  3  4   5  6   7  8
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 maxSum, start, end = kadane(nums)
 print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
@@ -135,6 +112,30 @@ MaxSum = 6 ::: start pos = 3 ::: end pos = 6
 
 print("\n")
 # i      0  1  2  3  4   5  6   7  8
+nums = [-2, 1, 3, 4, -1, 2, 1, -5, 4]
+maxSum, start, end = kadane(nums)
+print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
+print("[", end="")
+for j in range(start, end+1):
+    print(nums[j], end=",")
+print("]", end="")
+"""
+             i       0     1  2  3   4  5   6    7    8
+                   [-2,    1, 3, 4, -1, 2,  1,  -5,   4]
+                   -------------------------------------
+subtot       0      -2->0  1  4  8   7  9  10    5    9   
+tot         -2             1  4  8   8  9  10   10  [10]
+start        0             1  1  1      1  [1]  
+end          0             1  2  2      5  [6]
+
+Output:
+MaxSum = 10 ::: start pos = 1 ::: end pos = 6
+[1,3,4,-1,2,1,]
+"""
+
+
+print("\n")
+# i      0  1  2  3  4   5  6   7  8
 nums =  [2, 1, 3, 4, -1, 2, 1, -5, 4]
 maxSum, start, end = kadane(nums)
 print(f"MaxSum = {maxSum} ::: start pos = {start} ::: end pos = {end}")
@@ -142,3 +143,9 @@ print("[", end="")
 for j in range(start, end+1):
     print(nums[j], end=",")
 print("]", end="")
+
+'''
+Output:
+MaxSum = 12 ::: start pos = 0 ::: end pos = 6
+[2,1,3,4,-1,2,1,]
+'''
