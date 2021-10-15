@@ -36,10 +36,10 @@ def findMissingNumber(nums: list) -> int:
 
 
 myArray = [3, 4, 7, 1]
-print(findMissingNumberBruteForce(myArray))
+print(findMissingNumberBruteForce(myArray))     #OUTPUT: 2
 
 print("***************************************************")
-print(findMissingNumber(myArray))
+print(findMissingNumber(myArray))               #OUTPUT: 2
 
 """
 Output:
