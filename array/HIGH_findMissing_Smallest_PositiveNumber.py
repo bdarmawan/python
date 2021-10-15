@@ -18,7 +18,41 @@ def findMissingNumberBruteForce(myArray: list) -> int:
 
 
 
-def findMissingNumber(nums: list) -> int:
+### 2ND BEST, but there is a chance of getting overflow if the numbers are too big
+###
+### If the numbers ARE in sequennce, for example: [3,0,1] as in 0,1,2,3
+###                                       with 2 is the missing number
+### Then you can use math:  n * (n-1)/2 - sum[]
+def findMissingNumberWithMath(nums: list) -> int:
+    tot = 0
+    for num in nums:
+        tot += num
+    n = len(nums)
+    return int((n+1) * n/2 - tot)
+
+
+
+### 1st BEST, NO OVERFLOW
+###
+### If the numbers ARE in sequennce, for example: [3,0,1] as in 0,1,2,3
+###                                       with 2 is the missing number
+### Then you can XOR Operation
+###      (1 ^ 2 ^ 3 ^ 4 ^ 5)  ^  (1 ^ 2  ^ 4 ^ 5) = 3
+def findMissingNumberWithXOR(nums: list) -> int:
+    x = nums[0]
+    for i in range(1, len(nums)):
+        x ^= nums[i]                    # 3 ^ 4 ^ 6 = 1
+
+    xmin, xmax = min(nums), max(nums)
+    y = xmin
+    for i in range(xmin+1, xmax+1):
+        y ^= i                          # 3 ^ 4 ^ 5 ^ 6 = 4
+    return x ^ y                        # 1 ^ 4 = 5
+
+
+
+
+def findMissingNumberBySwapping(nums: list) -> int:
     n = len(nums)
     for i in range(n):
        correctPos = nums[i] - 1 # number 3 goes to index 2
@@ -34,30 +68,26 @@ def findMissingNumber(nums: list) -> int:
     return n+1
 
 
-
-
 ###
-### If the numbers is in sequennce, for example: [3,0,1] as in 0,1,2,3
-###                                       with 2 is the missing number
-### Then you can use math:  n * (n-1)/2 - sum[]
-def findMissingNumberWithMath(nums: list) -> int:
-    tot = 0
-    for num in nums:
-        tot += num
-    n = len(nums)
-    return int((n+1) * n/2 - tot)
-
-
+###TEST
 myArray = [3, 4, 7, 1]
 print(findMissingNumberBruteForce(myArray))     #OUTPUT: 2
 
 print("***************************************************")
 myArray = [3, 4, 7, 1]
-print(findMissingNumber(myArray))               #OUTPUT: 2
+print(findMissingNumberBySwapping(myArray))               #OUTPUT: 2
 
 print("***************************************************")
 myArray = [3,0,1]
 print(findMissingNumberWithMath(myArray))       #OUTPUT: 2
+
+print("***************************************************")
+myArray = [3,4,6]
+print(findMissingNumberWithXOR(myArray))       #OUTPUT: 5
+
+print("***************************************************")
+myArray = [3,4,5,6,8]
+print(findMissingNumberWithXOR(myArray))       #OUTPUT: 7
 
 """
 Output:
