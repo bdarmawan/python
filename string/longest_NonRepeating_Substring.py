@@ -1,13 +1,13 @@
 def isUnique(string):
-    map = {}
+    sets = set()
     for i in range(len(string)):
-        if string[i] in map:
+        if string[i] in sets:
             return False
         else:
-            map[string[i]] = 1
+            sets.add(string[i])
     return True
 
-# Brute Force
+# 4th choice: Brute Force
 # Complexity: O(N^3)
 def findLongestSubstring_BRUTE_FORCE(string):
     maxLength = 0
@@ -27,7 +27,7 @@ def findLongestSubstring_BRUTE_FORCE(string):
     return res
 
 
-# 2nd choice
+# 3rd choice
 # Complexity: O(N)
 def findLongestSubstring_2ND_CHOICE(string):
     dict = {}
@@ -45,7 +45,7 @@ def findLongestSubstring_2ND_CHOICE(string):
     return longest
 
 
-# 1st choice
+# 2nd choice
 # Complexity: O(N)
 def findLongestSubString_1ST_CHOICE(string):
     i = j = longest = 0
@@ -62,8 +62,16 @@ def findLongestSubString_1ST_CHOICE(string):
     return longest
 
 
-# 1st choice - THE BEST
+# 1st choice - THE BEST **********************
 # Complexity: O(N)
+#
+# use l and r pointers:
+#
+#         a b c a b c b b
+#         ^ ^ ^
+#         l ....
+#           ^ ^
+#           r ...
 def findLongestSubString_1ST_CHOICE_WhatAreThe(string):
     l, res = 0, 0
     mySet = set()
@@ -71,9 +79,9 @@ def findLongestSubString_1ST_CHOICE_WhatAreThe(string):
 
     for r in range(len(string)):
         while string[r] in mySet:
-            mySet.remove(string[l])
+            mySet.remove(string[l])     # remove the "old" char from the back of mySet
             l += 1
-        mySet.add(string[r])
+        mySet.add(string[r])            # add a "new" char to mySet
         res = max(res, r - l + 1)
         longest.append(string[l:r + 1])
     print(longest)
