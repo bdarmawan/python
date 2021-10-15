@@ -21,9 +21,7 @@ def swap(str):
 		if not(myString[left].isalpha()):   left += 1
 		elif not(myString[right].isalpha()):  right -= 1
 		else:
-			tmp = myString[left]
-			myString[left] = myString[right]
-			myString[right] = tmp
+			myString[left], myString[right] = myString[right], myString[left]
 			left += 1
 			right -= 1
 
