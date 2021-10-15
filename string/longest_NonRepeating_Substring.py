@@ -62,6 +62,24 @@ def findLongestSubString_1ST_CHOICE(string):
     return longest
 
 
+# 1st choice - THE BEST
+# Complexity: O(N)
+def findLongestSubString_1ST_CHOICE_WhatAreThe(string):
+    l, res = 0, 0
+    mySet = set()
+    longest = []
+
+    for r in range(len(string)):
+        while string[r] in mySet:
+            mySet.remove(string[l])
+            l += 1
+        mySet.add(string[r])
+        res = max(res, r - l + 1)
+        longest.append(string[l:r + 1])
+    print(longest)
+    return res
+
+
 
 # Driver Code
 if __name__ == "__main__":
@@ -78,7 +96,7 @@ if __name__ == "__main__":
     print(findLongestSubstring_2ND_CHOICE(string))      # OUTPUT: 7
     print("********************************************************")
     print(findLongestSubString_1ST_CHOICE(string))     # OUTPUT: 7
-
+    print(findLongestSubString_1ST_CHOICE_WhatAreThe(string))
 """
 Output: 
 substring: G ----> isUnique: True : length: 1 : maxLength: 1
