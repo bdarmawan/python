@@ -1,5 +1,14 @@
 from typing import List
 
+###
+### calculate mid
+### if nums[mid] > nums[mid+1] that means the rotation happened here
+### otherwise do similar to binary search:
+###             if nums[left] <= nums[mid] -> the numbers is still increasing
+###                                           thus search the right section:
+###                                           left = mid + 1
+###                                 else   -> search left section:
+###                                           right = mid - 1
 def findPivot_in_RotatedArray(nums: List) -> int:
     n = len(nums)
     left = 0
@@ -15,6 +24,14 @@ def findPivot_in_RotatedArray(nums: List) -> int:
     return -1
 
 
+###
+### calculate mid
+### if target == nums[mid] that means found the target here
+### otherwise check if nums[left] <= nums[mid]:
+###      if yes, do bin search on the left section
+###            then check if nums[left] <= target <= nums[mid]
+###      if no,  do bin search on the right section
+###            then check if nums[mid] <= target <= nums[right]
 def search_element_in_rotated_array(nums: List, target: int) -> int:
     n = len(nums)
     left = 0
@@ -43,6 +60,7 @@ print(f"Pivot's position: {findPivot_in_RotatedArray(nums)}, element: {nums[find
 nums = [5, 6, 7, 8, 9, 10, 0, 1, 2, 3]
 print(f"Pivot's position: {findPivot_in_RotatedArray(nums)}, element: {nums[findPivot_in_RotatedArray(nums)]}")
 print()
+
 nums = [5, 6, 7, 8, 0, 1, 2, 3, 4]
 print(f"Search for 7: {search_element_in_rotated_array(nums, 7)}th element")
 nums = [5, 6, 7, 8, 0, 1, 2, 3]
