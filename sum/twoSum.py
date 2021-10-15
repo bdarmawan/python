@@ -14,14 +14,13 @@ class MySolution:
     # time complexity = O(n)
     def twoSum_optimized(self, nums, target):
         result = []
-        complimentMaps = dict()
-        for i in range(len(nums)):
-            compliment = target - nums[i]
-            if nums[i] in complimentMaps:
-                #result.append([complimentMaps[nums[i]], i])    #---> these are the positions
-                result.append([nums[complimentMaps[nums[i]]], nums[i]])
+        map = dict()
+        for num in nums:
+            compliment = target - num
+            if num in map:
+                result.append([map[num], num])
             else:
-                complimentMaps[compliment] = i
+                map[compliment] = num
         return result
 
 
