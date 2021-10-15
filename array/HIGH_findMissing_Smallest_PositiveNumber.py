@@ -35,11 +35,29 @@ def findMissingNumber(nums: list) -> int:
 
 
 
+
+###
+### If the numbers is in sequennce, for example: [3,0,1] as in 0,1,2,3
+###                                       with 2 is the missing number
+### Then you can use math:  n * (n-1)/2 - sum[]
+def findMissingNumberWithMath(nums: list) -> int:
+    tot = 0
+    for num in nums:
+        tot += num
+    n = len(nums)
+    return int((n+1) * n/2 - tot)
+
+
 myArray = [3, 4, 7, 1]
 print(findMissingNumberBruteForce(myArray))     #OUTPUT: 2
 
 print("***************************************************")
+myArray = [3, 4, 7, 1]
 print(findMissingNumber(myArray))               #OUTPUT: 2
+
+print("***************************************************")
+myArray = [3,0,1]
+print(findMissingNumberWithMath(myArray))       #OUTPUT: 2
 
 """
 Output:
