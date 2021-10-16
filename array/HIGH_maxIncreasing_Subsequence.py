@@ -1,5 +1,20 @@
 #Dynamic Programming
 
+
+# 1ST CHOICE
+def LIS(nums):
+    LIS = [1] * len(nums)
+    for i in range(1, len(nums)):
+        for j in range(0, i):
+            if nums[i] > nums[j]  and  LIS[i] <= LIS[j]:
+                LIS[i] = 1 + LIS[j]
+
+    print(f'Array: {nums}')
+    print(LIS)
+    return max(LIS)
+
+
+### DP
 def lengthOfLIS(nums):
     LIS = [1] * len(nums)
 
@@ -12,7 +27,11 @@ def lengthOfLIS(nums):
 
 
 myList = [1,2,4,3]
-print(f"Longest increasing subsequence of {myList} is {lengthOfLIS(myList)}")
+print(f"Longest increasing subsequence of {myList} is {lengthOfLIS(myList)}")       #OUTPUT: 3
+
+myList = [1,2,4,3]
+print(LIS(myList))      #OUTPUT: 3
+
 
 """
 Output:
