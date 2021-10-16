@@ -2,6 +2,12 @@
 
 
 # 1ST CHOICE
+# Video: https://tinyurl.com/ubttk8w
+#       1 <= i <= len(nums)
+#       0 <= j <= i
+#              [1, 2, 4, 3]
+#               ^     ^
+#               j     i
 def LIS(nums):
     LIS = [1] * len(nums)
     for i in range(1, len(nums)):
