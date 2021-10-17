@@ -13,8 +13,8 @@ def compressWorkOne(chars: List[str]) -> int:
         indexRes += 1
         i += 1
 
-        if (count == 1):
-            continue
+        if (count == 1):                    #No need to print count if cur is 1 occurence
+            continue                        #For example:   a or b or c only
 
         for c in str(count):
             chars[indexRes] = c
