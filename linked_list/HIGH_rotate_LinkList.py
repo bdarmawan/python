@@ -34,7 +34,7 @@ class Solution:
             cur = cur.next
 
         newHead = cur.next
-        cur.next = None
+        cur.next = None    # terminate this cur.next otherwise it will end up looping forever
         tail.next = head
         return newHead
 
