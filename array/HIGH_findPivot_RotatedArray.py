@@ -40,7 +40,7 @@ def search_element_in_rotated_array(nums: List, target: int) -> int:
         mid = (right + left) // 2           #  l          mid          r
         if target == nums[mid]:
             return mid
-        elif nums[left] <= nums[mid]:                          # [5, 6, 7, 8, 0
+        if nums[left] <= nums[mid]:                            # [5, 6, 7, 8, 0
             if nums[left] <= target <= nums[mid]:              #  l          mid
                 right = mid - 1                                #  <-- target -->
             else:
