@@ -14,7 +14,7 @@ def explore(grid, r, c, visited):
 
     #BASE CASE
     if rowInbounds == False or colInbounds == False: return False   # This order is important
-    if grid[r][c] == "W": return False                              # if you don't check the inbounds this line
+    if grid[r][c] == "W": return False                              # if you don't check the inbounds above, this line
                                                                     # will be giving out index out of bound
 
     pos = str(r) + ',' + str(c)
