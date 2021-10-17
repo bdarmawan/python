@@ -90,7 +90,6 @@ def verifyBST2(root):
 ###TEST
 myList = [100, 90, 95, 105, 80, 70, 120, 110, 130, 140]
 root = createBinTree(myList)
-topValue = root.data
 print("")
 print(verifyBST(root))      #OUTPUT: True
 print(verifyBST2(root))     #OUTPUT: True
@@ -100,6 +99,5 @@ n.left = Node(100)
 n.left.left = Node(50)
 n.left.right = Node(250)
 n.right = Node(300)
-topValue = n.data
 print(verifyBST(n))         #OUTPUT: False
 print(verifyBST2(n))        #OUTPUT: False
