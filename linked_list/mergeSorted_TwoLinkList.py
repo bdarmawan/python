@@ -20,8 +20,8 @@ class Solution:
 
 def makeList(elements):
 	head = ListNode(elements[0])
+	ptr = head
 	for element in elements[1:]:
-		ptr = head
 		while ptr.next:
 			ptr = ptr.next
 		ptr.next = ListNode(element)
