@@ -56,7 +56,7 @@ def bestSumMem2(target, numbers, memo={}):
     shortestAnswer = None
     for number in numbers:
         remainder = target - number
-        remainderCombination = bestSumMem(remainder, numbers, memo)
+        remainderCombination = bestSumMem2(remainder, numbers, memo)
         if remainderCombination != None:
             if type(remainderCombination) == list:
                 combination = remainderCombination + [number]  # Tricky !!!
