@@ -31,7 +31,7 @@ def sortedSquare(arr):
     left = 0
     right = len(arr)-1
     length = len(arr)
-    newArr = list('0' * length)
+    newArr = [0] * length
 
     for i in range(length-1, -1, -1):
         if abs(arr[left]) > abs(arr[right]):
