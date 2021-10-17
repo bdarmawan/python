@@ -9,7 +9,7 @@
 #               ^     ^
 #               j     i
 def LIS(nums):
-    LIS = [1] * len(nums)
+    LIS = [1] * len(nums)           # initialized with [1], because nums[i] itself has length of 1
     for i in range(1, len(nums)):
         for j in range(0, i):
             if nums[i] > nums[j]  and  LIS[i] <= LIS[j]:
