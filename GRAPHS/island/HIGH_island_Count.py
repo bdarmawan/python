@@ -13,7 +13,7 @@ def explore(grid, r, c, visited):
     colInbounds = 0 <= c and c < len(grid[0])
 
     #BASE CASE
-    if not rowInbounds or not colInbounds: return False
+    if rowInbounds == False or colInbounds == False: return False
     if grid[r][c] == "W": return False
 
     pos = str(r) + ',' + str(c)
