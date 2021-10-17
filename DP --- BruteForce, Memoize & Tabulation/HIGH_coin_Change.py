@@ -17,14 +17,15 @@ def coinChange(coins: List[int], amount: int) -> int:
 
 
 
-def coinChangeRecursion(coins: List[int], amount: int) -> int:
+def coinChangeRecursion(coins: List[int], amount: int, memo={}) -> int:
+    if amount in memo: return memo[amount]
     if amount == 0: return []
     if amount <  0: return None
 
     result = None
     for coin in coins:
         remainder = amount - coin
-        temp = coinChangeRecursion(coins, remainder)
+        temp = coinChangeRecursion(coins, remainder, memo)
         if temp != None:
             if type(temp) == list:
                 combo = temp + [coin]
@@ -33,8 +34,11 @@ def coinChangeRecursion(coins: List[int], amount: int) -> int:
             if result == None  or  len(combo) < len(result):
                 result = combo
 
+    if type(temp) == list:
+        memo[amount] = result
+
     if result != None:
-        if -1 in result:        # if -1 exist in result, that means there's no solution (indicated by line #42)
+        if -1 in result:        # if -1 exist in result, that means there's no solution (indicated by line #46)
             return -1
         else:
             return len(result)
