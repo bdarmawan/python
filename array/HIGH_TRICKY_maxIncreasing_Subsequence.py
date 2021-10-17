@@ -32,6 +32,9 @@ def lengthOfLIS(nums):
     return max(LIS)
 
 
+
+###
+###TEST
 myList = [1,2,4,3]
 print(f"Longest increasing subsequence of {myList} is {lengthOfLIS(myList)}")       #OUTPUT: 3
 
