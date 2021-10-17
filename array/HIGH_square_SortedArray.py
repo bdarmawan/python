@@ -33,7 +33,7 @@ def sortedSquare(arr):
     length = len(arr)
     newArr = list('0' * length)
 
-    for i in range(length-1, 0, -1):
+    for i in range(length-1, -1, -1):
         if abs(arr[left]) > abs(arr[right]):
             newArr[i] = arr[left] ** 2
             left += 1
@@ -47,5 +47,5 @@ arr = [-12, -4, -1, 0, 3, 10, 30]
 print(sortedSquare(arr))
 
 """
-output: ['0', 1, 9, 16, 100, 144, 900] 
+output: [0, 1, 9, 16, 100, 144, 900] 
 """
