@@ -46,16 +46,19 @@ def printTree(root):
 ### BST requires all data on the left  <= ROOT
 ###                       on the right >= ROOT
 def verifyBST(root):
-    def valid(node, leftValueBoundary, rightValueBoundary):
-        if node is None:
-            return True
-        if not (node.data < leftValueBoundary   and   node.data > leftValueBoundary):
-            return False
+    return is_valid(root, -math.inf, math.inf)
 
-        return (valid(node.left, leftValueBoundary, node.data) and
-                valid(node.right, node.data, rightValueBoundary))
+def is_valid(node, leftValueBoundary, rightValueBoundary):
+    if node is None:
+        return True
 
-    return valid(root, -math.inf, math.inf)
+    if node.data < leftValueBoundary or node.data > rightValueBoundary:
+        return False
+
+    return (is_valid(node.left, leftValueBoundary, node.data) and
+            is_valid(node.right, node.data, rightValueBoundary))
+
+
 
 
 ### OPTION 2 - Using inOrder print
