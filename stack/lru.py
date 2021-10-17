@@ -34,22 +34,22 @@ class LRUCache:
 capacity = 2
 
 lru = LRUCache(capacity)
-lru.put(1,1)
-print(f'DICT: {lru.dict}')
-lru.put(2,2)
-print(f'DICT: {lru.dict}')
-lru.get(1)
-print(f'DICT: {lru.dict}')
-lru.put(3,3)
-print(f'DICT: {lru.dict}')
-lru.get(2)
-print(f'DICT: {lru.dict}')
-lru.put(4,4)
-print(f'DICT: {lru.dict}')
-lru.get(1)
-print(f'DICT: {lru.dict}')
-lru.get(3)
-print(f'DICT: {lru.dict}')
-lru.get(4)
-print(f'DICT: {lru.dict}')
+lru.put(1,1)                    #                           STACK: [1]
+print(f'DICT: {lru.dict}')      #OUTPUT: {1: 1}             STACK: [1]
+lru.put(2,2)                    #                           STACK: [1, ]
+print(f'DICT: {lru.dict}')      #OUTPUT: {1: 1, 2: 2}
+lru.get(1)                      #OUTPUT: 1                  STACK: [2, 1]
+print(f'DICT: {lru.dict}')      #OUTPUT: {1: 1, 2: 2}
+lru.put(3,3)                    #                           STACK: [1, 3]
+print(f'DICT: {lru.dict}')      #OUTPUT: {1: 1, 3: 3}
+lru.get(2)                      #OUTPUT: -1
+print(f'DICT: {lru.dict}')      #OUTPUT: {1: 1, 3: 3}
+lru.put(4,4)                    #                           STACK: [3, 4]
+print(f'DICT: {lru.dict}')      #OUTPUT: {3: 3, 4: 4}
+lru.get(1)                      #OUTPUT: -1
+print(f'DICT: {lru.dict}')      #OUTPUT: {3: 3, 4: 4}
+lru.get(3)                      #OUTPUT: 3                  STACK: [4, 3]
+print(f'DICT: {lru.dict}')      #OUTPUT: {3: 3, 4: 4}
+lru.get(4)                      #OUTPUT: 4                  STACK: [3, 4]
+print(f'DICT: {lru.dict}')      #OUTPUT: {3: 3, 4: 4}
 
