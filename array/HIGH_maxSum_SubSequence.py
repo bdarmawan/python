@@ -1,3 +1,13 @@
+###
+### BRUTE FORCE
+def maxSubSequenceBF(nums):
+    tot = 0
+    for num in nums:
+        if num > 0:     # since we're finding maxSum, thus only consider +'ve numbers only
+           tot += num
+    return tot
+
+
 def maxSubSequence(myList):
     maxRun = 0
     maxSum = 0
@@ -10,10 +20,21 @@ def maxSubSequence(myList):
     return maxSum
 
 
+def maxSubSequence2(nums):
+    subtot, subMax = 0, 0
+
+    for num in nums:
+        subtot += num
+        subMax = max(subMax, subtot, num)
+        subtot = subMax
+    return subMax
+
 a = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 print(f"List: {a}")
-print(f"MaxSum: {maxSubSequence(a)}")
-
+print(f"MaxSum: {maxSubSequence(a)}")           #OUTPUT: 12
+print(f"MaxSum: {maxSubSequence2(a)}")          #OUTPUT: 12
+print(f'MaxSum BF: {maxSubSequenceBF(a)}')      #OUTPUT: 12
+print("")
 """
            *      *      *  *      *
 List: [-2, 1, -3, 4, -1, 2, 1, -5, 4]
@@ -32,7 +53,9 @@ MaxSum: 12
 
 b = [-2, 1, -3, 4, -1, 2, 1, 5, 4]
 print(f"List: {b}")
-print(f"MaxSum: {maxSubSequence(b)}")
+print(f"MaxSum: {maxSubSequence(b)}")           #OUTPUT: 17
+print(f"MaxSum: {maxSubSequence2(b)}")          #OUTPUT: 17
+print(f'MaxSum BF: {maxSubSequenceBF(b)}')      #OUTPUT: 17
 """
            *      *      *  *  *  *
 List: [-2, 1, -3, 4, -1, 2, 1, 5, 4]
