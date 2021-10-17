@@ -49,7 +49,7 @@ def verifyBST(root):
     def valid(node, leftValueBoundary, rightValueBoundary):
         if node is None:
             return True
-        if not (node.data < leftValueBoundary and node.data > leftValueBoundary):
+        if not (node.data < leftValueBoundary   and   node.data > leftValueBoundary):
             return False
 
         return (valid(node.left, leftValueBoundary, node.data) and
