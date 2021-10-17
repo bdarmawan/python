@@ -27,4 +27,4 @@ if __name__ == '__main__':
 
     res = matchingStrings(strings, queries)
 
-    print('\n'.join(map(str, res)))
+    print(' '.join(map(str, res)))         #OUTPUT: 2, 1, 0
