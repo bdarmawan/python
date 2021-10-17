@@ -35,18 +35,40 @@ class Solution:
             print(head.val, end = " ")
             head = head.next
 
+
+    def makeList(self, nums):
+        head = ListNode(nums[0])
+        cur = head
+        for num in nums[1:]:
+            while cur.next:
+                cur = cur.next
+            cur.next = ListNode(num)
+        return head
+
 ###
 ### TEST
 # l1 = 1 -> 2 -> 4
-l1 = ListNode(1)
-l1.next = ListNode(2)
-l1.next.next = ListNode(4)
+# l1 = ListNode(1)
+# l1.next = ListNode(2)
+# l1.next.next = ListNode(4)
+#
+# # l2 = 1 -> 3 -> 4
+# l2 = ListNode(1)
+# l2.next = ListNode(3)
+# l2.next.next = ListNode(4)
 
-# l2 = 1 -> 3 -> 4
-l2 = ListNode(1)
-l2.next = ListNode(3)
-l2.next.next = ListNode(4)
+
 
 s = Solution()
+list1 = [1,2,4]
+l1 = s.makeList(list1)
+s.printList(l1)
+print("")
+
+list2 = [1,3,4]
+l2 = s.makeList(list2)
+s.printList(l2)
+print("")
+
 result = s.mergeTwoLists(l1, l2)     # OUTPUT: 1 1 2 3 4 4
 s.printList(result)
