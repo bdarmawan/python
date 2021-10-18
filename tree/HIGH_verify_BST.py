@@ -52,11 +52,10 @@ def is_valid(node, leftValueBoundary, rightValueBoundary):
     if node is None:
         return True
 
-    if node.data < leftValueBoundary or node.data > rightValueBoundary:
+    if node.data < leftValueBoundary  or  node.data > rightValueBoundary:
         return False
 
-    return (is_valid(node.left, leftValueBoundary, node.data) and
-            is_valid(node.right, node.data, rightValueBoundary))
+    return (is_valid(node.left, leftValueBoundary, node.data)  and  is_valid(node.right, node.data, rightValueBoundary))
 
 
 
