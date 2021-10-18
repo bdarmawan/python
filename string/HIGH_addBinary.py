@@ -54,10 +54,10 @@ b = "11011"
 print(addBinary(a, b))   # OUTPUT: 111000
 
 a = "11101"
-b = " 1011"
+b = "1011"
 print(addBinary(a, b))   # OUTPUT: "101000"
 
 a = "10101"
-b = "   11"
+b = "11"
 print(addBinary(a, b))   # OUTPUT: "11000"
 
