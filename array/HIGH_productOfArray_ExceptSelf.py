@@ -87,7 +87,7 @@ print(prodArray2(array))    #OUTPUT: [8, 6, 24, 12]
 '''
 array = [ 3,  4,  1,  2]
 LEFT:   [ 3, 12, 12, 24]
-RIGHT:  [12,  8,  2,  2]
+RIGHT:  [24,  8,  2,  2]
 OP:     [ 8,  6, 24, 12]
 
 '''
