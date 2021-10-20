@@ -14,9 +14,9 @@ def rotateArray1(arrays, k):
 
 def rotateArray2(arrays, k):
     ### 1 2 3 4 5 6 7 8
-    ### <- n-k -> 1 2 3
-    ###           <-k->
-    ### 4 5 6 7 8
+    ### <-k-> 1 2 3 4 5
+    ###       <- n-k ->
+    ### 6 7 8
     ### (i + k) % n
     n = len(arrays)
     newArray = [0] * n
