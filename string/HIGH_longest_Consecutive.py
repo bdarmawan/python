@@ -2,7 +2,23 @@ from typing import List
 
 
 class Solution:
-    def longestConsecutive(self, nums: List[int]) -> int:
+
+###
+### 1st Option
+    def longestConsecutive(self, numbers: List[int]) -> int:
+        numSet = set(numbers)
+        for num in numbers:
+            if num - 1 not in numSet:
+                length = 1
+                while num + 1 in numSet:
+                    length += 1
+                    num += 1
+        return length
+
+
+###
+### 2nd Option
+    def longestConsecutive_v2(self, nums: List[int]) -> int:
         numSet = set(nums)
         # convert to set to take care of duplicate element
         longest = 0
@@ -20,6 +36,7 @@ s = Solution()
 b = [100, 4, 200, 1, 3, 2]
 print(f"List: {b}")
 print(f"Longest consecutive: {s.longestConsecutive(b)}")
+print(f"Longest consecutive: {s.longestConsecutive_v2(b)}")
 
 """
 List: [100, 4, 200, 1, 3, 2]
