@@ -6,7 +6,7 @@ class Solution:
 ###
 ### 1st Option
     def longestConsecutive(self, numbers: List[int]) -> int:
-        numSet = set(numbers)
+        numSet = set(numbers)   # convert to set to take care of duplicate element
         for num in numbers:
             if num - 1 not in numSet:
                 length = 1
